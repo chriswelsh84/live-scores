@@ -1,0 +1,154 @@
+/* Football-themed styles for the live scores website */
+body {
+    background-image: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="%2351A351" width="100" height="100"/><path d="M10,50 H90 M50,10 V90" stroke="white" stroke-width="2" stroke-opacity="0.5"/></svg>');
+    background-repeat: repeat;
+    background-color: #15803d; /* bg-green-700 */
+    font-family: sans-serif;
+    color: #ffffff; /* text-white */
+}
+
+/* Header */
+header {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #ffffff; /* text-white */
+    padding: 1.5rem; /* p-6 */
+    text-align: center;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+}
+
+header h1 {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem; /* gap-2 */
+}
+
+header p {
+    font-size: 0.875rem; /* text-sm */
+    margin-top: 0.5rem; /* mt-2 */
+}
+
+/* Main container */
+.container {
+    max-width: 1280px; /* mx-auto */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem; /* p-6 */
+}
+
+/* Fixtures grid */
+.grid {
+    display: grid;
+    gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)); /* md:grid-cols-2 */
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)); /* lg:grid-cols-3 */
+    }
+}
+
+/* Fixture card */
+.fixture-card {
+    background-color: #ffffff; /* bg-white */
+    padding: 1.5rem; /* p-6 */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; /* gap-2 */
+    border: 2px solid #e5e7eb; /* border-2 border-gray-200 */
+    transition: border-color 0.3s ease; /* transition */
+    color: #1f2937; /* text-gray-800 */
+}
+
+.fixture-card:hover {
+    border-color: #facc15; /* hover:border-yellow-400 */
+}
+
+.fixture-card .flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fixture-card .text-sm {
+    font-size: 0.875rem; /* text-sm */
+}
+
+.fixture-card .text-gray-600 {
+    color: #4b5563; /* text-gray-600 */
+}
+
+.fixture-card .flex.items-center {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem; /* gap-1 */
+}
+
+.fixture-card .text-yellow-500 {
+    color: #eab308; /* text-yellow-500 */
+}
+
+.fixture-card .font-semibold {
+    font-weight: 600; /* font-semibold */
+    font-size: 1.125rem; /* text-lg */
+}
+
+.fixture-card .text-xl {
+    font-size: 1.25rem; /* text-xl */
+    font-weight: 700; /* font-bold */
+    color: #15803d; /* text-green-700 */
+}
+
+.fixture-card .text-green-500 {
+    color: #22c55e; /* text-green-500 */
+}
+
+.fixture-card .text-gray-500 {
+    color: #6b7280; /* text-gray-500 */
+}
+
+.fixture-card .text-right {
+    text-align: right;
+}
+
+/* Loading and error messages */
+#loading {
+    text-align: center;
+    padding: 1rem; /* p-4 */
+    color: #ffffff; /* text-white */
+    background-color: #1f2937; /* bg-gray-800 */
+    border-radius: 0.5rem; /* rounded-lg */
+}
+
+#error {
+    text-align: center;
+    padding: 1rem; /* p-4 */
+    color: #ef4444; /* text-red-500 */
+    background-color: #ffffff; /* bg-white */
+    border-radius: 0.5rem; /* rounded-lg */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-lg */
+    display: none; /* hidden */
+}
+
+#error.visible {
+    display: block; /* Remove hidden */
+}
+
+/* Footer */
+footer {
+    background-color: #1f2937; /* bg-gray-800 */
+    color: #ffffff; /* text-white */
+    text-align: center;
+    padding: 1rem; /* p-4 */
+    font-size: 0.875rem; /* text-sm */
+}
