@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,9 +22,11 @@
     </header>
     <main class="container mx-auto p-6">
         <div id="fixtures" class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            <!-- Fixtures will be populated here -->
+            <!-- Futbol24 Widget Start -->
+            <iframe src="https://www.futbol24.com/live/" width="200%" height="1000" frameborder="0" scrolling="auto" style="background:#fff; border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,0.1);"></iframe>
+            <!-- Futbol24 Widget End -->
         </div>
-        <div id="loading" class="text-center p-4 text-white bg-gray-800 rounded-lg">Loading fixtures... ⏳</div>
+        <div id="loading" class="text-center p-4 text-white bg-gray-800 rounded-lg hidden">Loading fixtures... ⏳</div>
         <div id="error" class="text-red-500 text-center hidden p-4 bg-white rounded-lg shadow-md"></div>
     </main>
     <footer class="bg-gray-800 text-white text-center p-4 text-sm">
@@ -36,40 +37,9 @@
         async function fetchFixtures() {
             const apiKey = 'YOUR_SPORTDATAAPI_KEY'; // Replace with your API key
             if (!apiKey || apiKey === 'YOUR_SPORTDATAAPI_KEY') {
-                // Fallback to mock data if no API key
+                // No API key, return empty array
                 await new Promise(resolve => setTimeout(resolve, 1000));
-                return [
-                    {
-                        id: 1,
-                        league: "Premier League",
-                        home_team: "Manchester United",
-                        away_team: "Liverpool",
-                        score: { home: 1, away: 1 },
-                        status: "In Progress",
-                        time: "45'",
-                        kickoff: "14:00 BST"
-                    },
-                    {
-                        id: 2,
-                        league: "La Liga",
-                        home_team: "Real Madrid",
-                        away_team: "Barcelona",
-                        score: { home: 0, away: 0 },
-                        status: "Not Started",
-                        time: "0'",
-                        kickoff: "20:00 BST"
-                    },
-                    {
-                        id: 3,
-                        league: "Serie A",
-                        home_team: "Juventus",
-                        away_team: "Inter Milan",
-                        score: { home: 2, away: 0 },
-                        status: "In Progress",
-                        time: "70'",
-                        kickoff: "18:30 BST"
-                    }
-                ];
+                return [];
             }
             try {
                 const today = new Date().toISOString().split('T')[0]; // Get today's date (2025-07-08)
